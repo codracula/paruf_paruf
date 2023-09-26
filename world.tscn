@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4c3rl5v0s6ca"]
+
+[ext_resource type="PackedScene" uid="uid://cwvo1fgihegsr" path="res://grass.tscn" id="1_a05cw"]
+[ext_resource type="PackedScene" uid="uid://blxw4lv4eophb" path="res://player.tscn" id="2_22ije"]
+
+[node name="World" type="Node2D"]
+
+[node name="grass" parent="." instance=ExtResource("1_a05cw")]
+position = Vector2(54, 162)
+
+[node name="grass2" parent="." instance=ExtResource("1_a05cw")]
+position = Vector2(72, 162)
+
+[node name="grass3" parent="." instance=ExtResource("1_a05cw")]
+position = Vector2(90, 162)
+
+[node name="grass4" parent="." instance=ExtResource("1_a05cw")]
+position = Vector2(108, 162)
+
+[node name="Player" parent="." instance=ExtResource("2_22ije")]
+position = Vector2(54, 144)
