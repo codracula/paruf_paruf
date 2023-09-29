@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bekemejoisuy2"]
+
+[ext_resource type="Texture2D" uid="uid://mbpi7jyebg4g" path="res://sprites/tiles_packed.png" id="1_xkh4d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrtvx"]
+size = Vector2(52, 52)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rrtvx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xkh4d")
+region_enabled = true
+region_rect = Rect2(306, 0, 54, 54)
