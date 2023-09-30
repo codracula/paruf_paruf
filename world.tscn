@@ -13,7 +13,7 @@ position = Vector2(477, 99)
 scale = Vector2(3, 3)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("3_tp3bs")]
-position = Vector2(261, -18)
+position = Vector2(234, 81)
 scale = Vector2(3, 3)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("3_tp3bs")]
