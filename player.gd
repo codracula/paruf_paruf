@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 enum{
-	MOVE
+	MOVE, CLIMB
 }
 @onready var animatedSprite = $AnimatedSprite2D
 const SPEED = 300.0
@@ -17,11 +17,14 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	if is_on_floor():
+		currentJump = 0
 	# Handle Jump.
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		currentJump = 1
-	elif Input.is_action_just_pressed("ui_accept") and not is_on_floor():
+	elif Input.is_action_just_pressed("ui_accept") and currentJump < MAXJUMP_COUNT and not is_on_floor():
+		currentJump += 1
 #		fix double jump
 		
 	# Get the input direction and handle the movement/deceleration.
@@ -36,5 +39,5 @@ func _physics_process(delta):
 	move_and_slide()
 
 func doubleJump_reset():
-	DOUBLEJUMP_COUNT = 1
+	MAXJUMP_COUNT = 1
 	
