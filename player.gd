@@ -13,25 +13,27 @@ var MAXJUMP_COUNT = 2
 var currentJump = 0
 
 func _physics_process(delta):
-	# Add the gravity.
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		animatedSprite.animation = "idle"
 
 	if is_on_floor():
 		currentJump = 0
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		print(currentJump);
+	if Input.is_action_just_pressed("ui_accept") and can_jump():
 		velocity.y = JUMP_VELOCITY
 		currentJump = 1
-	elif Input.is_action_just_pressed("ui_accept") and currentJump < MAXJUMP_COUNT and not is_on_floor():
+		print(currentJump);
+	elif Input.is_action_just_pressed("ui_accept") and currentJump < MAXJUMP_COUNT:
+		velocity.y = JUMP_VELOCITY
 		currentJump += 1
 #		fix double jump
-		
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		animatedSprite.animation = "walk"
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		animatedSprite.animation = "idle"
@@ -41,3 +43,7 @@ func _physics_process(delta):
 func doubleJump_reset():
 	MAXJUMP_COUNT = 1
 	
+func can_jump():
+	return is_on_floor();
+	
+
