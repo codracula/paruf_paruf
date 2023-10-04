@@ -135,3 +135,13 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, 1)
 shape = SubResource("RectangleShape2D_6imwt")
+
+[node name="bottomCheck" type="RayCast2D" parent="."]
+target_position = Vector2(0, 18)
+
+[node name="frontCheck" type="RayCast2D" parent="."]
+target_position = Vector2(20, 0)
+collide_with_areas = true
+
+[node name="backCheck" type="RayCast2D" parent="."]
+target_position = Vector2(-23, 0)
