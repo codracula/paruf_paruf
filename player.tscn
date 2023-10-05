@@ -201,8 +201,6 @@ script = ExtResource("1_3odny")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_36s10")
 animation = &"walk"
-frame = 5
-frame_progress = 0.0648908
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

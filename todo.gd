@@ -1,7 +1,7 @@
 # things to do
-#1. work on doublejump
-#2. work on animation idle 
-#3. work on animation move
+#1. work on doublejump       -done
+#2. work on animation idle   -done
+#3. work on animation move   -done
 #4. work on climb (use move anim)
 #5. work on title card. 
 #6. work on death and respawn
