@@ -23,3 +23,6 @@ scale = Vector2(3, 3)
 [node name="StaticBody2D4" parent="." instance=ExtResource("3_tp3bs")]
 position = Vector2(279, 270)
 scale = Vector2(3, 3)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(180, 108)
