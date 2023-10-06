@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://dr0sxxtakvytu"]
+[gd_scene load_steps=15 format=3 uid="uid://dr0sxxtakvytu"]
 
 [ext_resource type="Texture2D" uid="uid://dg1n1fra8qnm4" path="res://sprites/Snail/Walk (38x24).png" id="1_ot4pb"]
+[ext_resource type="Theme" uid="uid://c7cdvabc13ypf" path="res://menuTheme.tres" id="1_pwsw7"]
+[ext_resource type="Script" path="res://menu.gd" id="1_s6y05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_snsl8"]
 atlas = ExtResource("1_ot4pb")
@@ -76,7 +78,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_1sxvb")
 }],
 "loop": true,
-"name": &"default",
+"name": &"idle",
 "speed": 18.0
 }]
 
@@ -87,8 +89,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pwsw7")
+script = ExtResource("1_s6y05")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -97,38 +109,44 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Control/ColorRect"]
+position = Vector2(661, 243)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_8yky4")
+animation = &"idle"
+flip_h = true
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 99.0
-offset_top = 88.0
-offset_right = -96.0
-offset_bottom = -18.0
+offset_left = 351.0
+offset_top = 288.0
+offset_right = -335.0
+offset_bottom = -153.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_pwsw7")
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="Start" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Start" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "START
 "
+icon_alignment = 1
 
-[node name="Option" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Option" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 20.0
 text = "OPTIONS
 "
 
-[node name="Credit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Credit" type="Button" parent="Control/ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 20.0
 text = "CREDIT"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect/MarginContainer/VBoxContainer"]
-position = Vector2(99, -36)
-scale = Vector2(2.35078, 2.44738)
-sprite_frames = SubResource("SpriteFrames_8yky4")
-frame_progress = 0.23103
-flip_h = true

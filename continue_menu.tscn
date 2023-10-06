@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c6p104n8tt1nj"]
+[gd_scene load_steps=2 format=3 uid="uid://c6p104n8tt1nj"]
+
+[ext_resource type="Theme" uid="uid://c7cdvabc13ypf" path="res://menuTheme.tres" id="1_scosb"]
 
 [node name="Continue_menu" type="Control"]
 layout_mode = 3
@@ -7,60 +9,51 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_scosb")
 
-[node name="mainCont" type="MarginContainer" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 81.0
-offset_top = 76.0
-offset_right = -192.0
-offset_bottom = -109.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="mainCont"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 351.0
+offset_top = 378.0
+offset_right = -335.0
+offset_bottom = -63.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="Yes" type="Button" parent="mainCont/VBoxContainer"]
+[node name="Continue" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Continue
+"
+icon_alignment = 1
+
+[node name="MainMenu" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_stretch_ratio = 20.0
-focus_neighbor_right = NodePath("../../../mainCont2/VBoxContainer2/No")
-text = "YES"
+text = "Main menu
+"
 
-[node name="mainCont3" type="MarginContainer" parent="."]
-layout_mode = 2
-offset_left = 81.0
-offset_top = 112.0
-offset_right = 306.0
-offset_bottom = 143.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="mainCont3"]
-layout_mode = 2
-
-[node name="Main menu" type="Button" parent="mainCont3/VBoxContainer"]
-layout_mode = 2
-focus_neighbor_top = NodePath("../../../mainCont/VBoxContainer/Yes")
-text = "MAIN MENU"
-
-[node name="mainCont2" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 198.0
-offset_top = 76.0
-offset_right = -78.0
-offset_bottom = -109.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="mainCont2"]
-layout_mode = 2
-
-[node name="No" type="Button" parent="mainCont2/VBoxContainer2"]
-layout_mode = 2
-text = "NO"
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+offset_left = 415.0
+offset_top = 239.0
+offset_right = 906.0
+offset_bottom = 372.0
+theme_override_colors/default_color = Color(0.0898438, 0.527344, 0.503906, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "GAME OVER"

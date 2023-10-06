@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://4r3fvi0lsg18"]
+[gd_scene load_steps=2 format=3 uid="uid://4r3fvi0lsg18"]
+
+[ext_resource type="Theme" uid="uid://c7cdvabc13ypf" path="res://menuTheme.tres" id="1_6hl78"]
 
 [node name="Options_menu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6hl78")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -19,29 +22,46 @@ color = Color(0, 0, 0, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 99.0
-offset_top = 88.0
-offset_right = -96.0
-offset_bottom = -18.0
+offset_left = 351.0
+offset_top = 360.0
+offset_right = -335.0
+offset_bottom = -81.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(-1188, -198)
+theme = ExtResource("1_6hl78")
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
 
-[node name="Volumn" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Volume" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "VOLUMN
+text = "VOLUME
 "
+icon_alignment = 1
 
-[node name="Option" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
+[node name="Audio on_off" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "AUDIO ON
-"
+size_flags_stretch_ratio = 20.0
+text = "AUDIO ON/OFF"
 
 [node name="Credit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 20.0
 text = "BACK"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 221.0
+offset_right = 850.0
+offset_bottom = 354.0
+pivot_offset = Vector2(-1309, -59)
+theme_override_colors/default_color = Color(0.0898438, 0.527344, 0.503906, 1)
+theme_override_font_sizes/normal_font_size = 80
+text = "OPTIONS"
