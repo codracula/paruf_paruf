@@ -193,7 +193,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6imwt"]
-size = Vector2(31, 22)
+size = Vector2(30, 21)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(3, 3)
@@ -205,7 +205,7 @@ animation = &"walk"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, 1)
+position = Vector2(0, 1.5)
 shape = SubResource("RectangleShape2D_6imwt")
 
 [node name="bottomCheck" type="RayCast2D" parent="."]

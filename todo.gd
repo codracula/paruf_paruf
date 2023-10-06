@@ -16,3 +16,9 @@
 #15. continue screen music, and ui_accept sound 
 #16. make lvl 2
 #17. make lvl 3
+
+#18. create singleton for score, lives
+#18.1 continue to reset live and score
+#19. singleton for menu options
+#20. link score to UI
+#21. link lives to UI

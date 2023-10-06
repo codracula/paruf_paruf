@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4c3rl5v0s6ca"]
+[gd_scene load_steps=4 format=3 uid="uid://b4c3rl5v0s6ca"]
 
 [ext_resource type="PackedScene" uid="uid://blxw4lv4eophb" path="res://player.tscn" id="2_22ije"]
+[ext_resource type="PackedScene" uid="uid://j18hw7anqupg" path="res://game_cam.tscn" id="3_hobdg"]
 [ext_resource type="PackedScene" uid="uid://bekemejoisuy2" path="res://prototype_block.tscn" id="3_tp3bs"]
 
 [node name="World" type="Node2D"]
@@ -24,5 +25,5 @@ scale = Vector2(3, 3)
 position = Vector2(279, 270)
 scale = Vector2(3, 3)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(180, 108)
+[node name="GameCam" parent="." instance=ExtResource("3_hobdg")]
+position = Vector2(351, 189)

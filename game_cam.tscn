@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://j18hw7anqupg"]
+
+[ext_resource type="Texture2D" uid="uid://cvvr1583tr83s" path="res://sprites/Snail/Idle (38x24).png" id="1_5agdi"]
+[ext_resource type="Script" path="res://game_cam.gd" id="1_wosb6"]
+[ext_resource type="Texture2D" uid="uid://mbpi7jyebg4g" path="res://sprites/tiles_packed.png" id="2_nvfdc"]
+
+[node name="GameCam" type="Camera2D"]
+script = ExtResource("1_wosb6")
+
+[node name="PlayerIcon" type="Sprite2D" parent="."]
+position = Vector2(-576, -279)
+scale = Vector2(5, 5)
+texture = ExtResource("1_5agdi")
+region_enabled = true
+region_rect = Rect2(385, 4, 9, 20)
+
+[node name="CoinIcon" type="Sprite2D" parent="."]
+position = Vector2(-573, -189)
+scale = Vector2(4, 4)
+texture = ExtResource("2_nvfdc")
+region_enabled = true
+region_rect = Rect2(146, 112, 14, 15)
